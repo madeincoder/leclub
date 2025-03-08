@@ -1,0 +1,124 @@
+.darkModeBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+.toggleSwitch {
+  position: relative;
+  width: 95px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+
+  &:focus-visible {
+    outline: 2px solid #875cff;
+    outline-offset: 2px;
+  }
+}
+
+.toggleTrack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  background-color: #875cff;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+.icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  color: white;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.sunIcon,
+.moonIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.toggleButton {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 27px;
+    border-radius: 50%;
+    border-right: 4px solid #875cff;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+  }
+}
+
+.lightMode {
+  .toggleButton {
+    left: 4px;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 28px;
+      height: 27px;
+      border-radius: 50%;
+      border-right: 4px solid transparent;
+      border-left: 4px solid #875cff;
+      border-top: 4px solid #fff;
+      border-bottom: 4px solid #fff;
+    }
+  }
+
+  .icon {
+    right: 12px;
+  }
+}
+
+.darkMode {
+  .toggleButton {
+    left: calc(100% - 36px);
+  }
+
+  .icon {
+    left: 12px;
+  }
+}
+
+// Integrate with your existing dark mode styles
+:global(.dark) {
+  .darkModeBox {
+    h3 {
+      color: var(--darkHeadingTextColor) !important;
+    }
+  }
+}
