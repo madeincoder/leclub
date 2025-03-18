@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import Grid from "@mui/material/Grid";
-import Link from 'next/link';
-import styles from '@/styles/PageTitle.module.css'
+import Link from "next/link";
+import styles from "@/styles/PageTitle.module.css";
 import Features from "@/components/Dashboard/eCommerce/Features";
 import Ratings from "@/components/Dashboard/eCommerce/Ratings";
 import AudienceOverview from "@/components/Dashboard/eCommerce/AudienceOverview";
@@ -15,6 +15,7 @@ import RecentOrders from "@/components/Dashboard/eCommerce/RecentOrders";
 import TeamMembersList from "@/components/Dashboard/eCommerce/TeamMembersList";
 import BestSellingProducts from "@/components/Dashboard/eCommerce/BestSellingProducts";
 import LiveVisitsOnOurSite from "@/components/Dashboard/eCommerce/LiveVisitsOnOurSite";
+import { Box } from "@mui/material";
 
 export default function eCommerce() {
   return (
@@ -26,75 +27,37 @@ export default function eCommerce() {
           <li>
             <Link href="/">Dashboard</Link>
           </li>
-          <li>
-            eCommerce
-          </li>
+          <li>eCommerce</li>
         </ul>
       </div>
 
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
-        <Grid item xs={12} md={12} lg={12} xl={8}>
+        <Grid item xs={12} md={12} lg={12} xl={12}>
           {/* Features */}
           <Features />
-
           {/* AudienceOverview */}
-          <AudienceOverview />
-
-          <Grid
-            container
-            columnSpacing={{ xs: 1, sm: 2, md: 2 }}
+          {/* <AudienceOverview /> */}
+          {/* black friday image */}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              mb: "15px",
+              mt: "15px",
+              borderRadius: "10px",
+            }}
           >
-            <Grid item xs={12} md={8}>
-              {/* VisitsByDay */}
-              <VisitsByDay />
-            </Grid>
-
-            <Grid item xs={12} md={4}>
-              {/* Impressions */}
-              <Impressions />
-
-              {/* ActivityTimeline */}
-              <ActivityTimeline />
-            </Grid>
-
-            <Grid item xs={12} md={12}>
-              {/* RevenuStatus */}
-              <RevenuStatus />
-            </Grid>
-          </Grid>
-        </Grid>
-
-        <Grid item xs={12} md={12} lg={12} xl={4}>
-          {/* Ratings */}
-          <Ratings />
-
-          {/* LiveVisitsOnOurSite */}
-          <LiveVisitsOnOurSite />
-
-          {/* SalesByLocations */}
-          <SalesByCountries />
-
-          {/* NewCustomers */}
-          <NewCustomers />
-        </Grid>
-      </Grid>
-
-      {/* Recent Orders */}
-      <RecentOrders />
-
-      <Grid
-        container
-        rowSpacing={1}
-        columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 1, xl: 2 }}
-      >
-        <Grid item xs={12} md={12} lg={12} xl={8}>
-          {/* TeamMembersList */}
-          <TeamMembersList />
-        </Grid>
-
-        <Grid item xs={12} md={12} lg={12} xl={4}>
-          {/* BestSellingProducts */}
-          <BestSellingProducts />
+            <Box>
+              <img
+                src="/images/black-friday.png"
+                alt="User"
+                width="100%"
+                height="100%"
+                style={{ borderRadius: "10px", objectFit: "contain" }}
+              />
+            </Box>
+          </Box>
         </Grid>
       </Grid>
     </>

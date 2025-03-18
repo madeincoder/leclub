@@ -39,11 +39,11 @@ const options = {
   plugins: {
     legend: {
       labels: {
-        color: '#5B5B98'
-      }
+        color: "#5B5B98",
+      },
     },
-  }
-}
+  },
+};
 
 const AudienceOverview = () => {
   // Select Form
@@ -84,26 +84,38 @@ const AudienceOverview = () => {
           </Typography>
           <Box>
             <FormControl sx={{ minWidth: 120 }} size="small">
-              <InputLabel id="demo-select-small" sx={{ fontSize: '14px' }}>Select</InputLabel>
+              <InputLabel id="demo-select-small" sx={{ fontSize: "14px" }}>
+                Select
+              </InputLabel>
               <Select
                 labelId="demo-select-small"
                 id="demo-select-small"
                 value={select}
                 label="Select"
-                onChange={handleChange} 
-                sx={{ fontSize: '14px' }}
+                onChange={handleChange}
+                sx={{ fontSize: "14px" }}
               >
-                <MenuItem value={0} sx={{ fontSize: '14px' }}>Today</MenuItem>
-                <MenuItem value={1} sx={{ fontSize: '14px' }}>Last 7 Days</MenuItem>
-                <MenuItem value={2} sx={{ fontSize: '14px' }}>Last Month</MenuItem>
-                <MenuItem value={3} sx={{ fontSize: '14px' }}>Last 12 Months</MenuItem>
-                <MenuItem value={4} sx={{ fontSize: '14px' }}>All Time</MenuItem>
+                <MenuItem value={0} sx={{ fontSize: "14px" }}>
+                  Today
+                </MenuItem>
+                <MenuItem value={1} sx={{ fontSize: "14px" }}>
+                  Last 7 Days
+                </MenuItem>
+                <MenuItem value={2} sx={{ fontSize: "14px" }}>
+                  Last Month
+                </MenuItem>
+                <MenuItem value={3} sx={{ fontSize: "14px" }}>
+                  Last 12 Months
+                </MenuItem>
+                <MenuItem value={4} sx={{ fontSize: "14px" }}>
+                  All Time
+                </MenuItem>
               </Select>
             </FormControl>
           </Box>
         </Box>
-      
-        <Line data={data} options={options} height={100}/>
+
+        <Line data={data} options={options} height={100} />
       </Card>
     </>
   );
