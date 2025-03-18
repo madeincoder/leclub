@@ -19,36 +19,31 @@ const HotDeals = () => {
         sx={{
           boxShadow: "none",
           borderRadius: "10px",
-          p: "25px",
           mb: "15px",
           mt: "15px",
           backgroundColor: "#ff5722",
           textAlign: "center",
           color: "#fff",
-          backgroundImage: "url('/images/hot-deals.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          minHeight: "560px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
         }}
       >
-        <Box>
-          <Typography
-            variant="h3"
-            sx={{
-              fontSize: 32,
-              fontWeight: 700,
-              color: "#fff",
-              textShadow: "2px 2px 5px rgba(0,0,0,0.5)",
-            }}
-          >
-            Hot Deals!
-          </Typography>
-          <Typography sx={{ fontSize: 18, marginTop: "10px", color: "#fff" }}>
-            Grab the best discounts before they're gone!
-          </Typography>
+        {/* black friday image */}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: "10px",
+          }}
+        >
+          <Box>
+            <img
+              src="/images/black-friday.png"
+              alt="User"
+              width="100%"
+              height="100%"
+              style={{ borderRadius: "10px", objectFit: "contain" }}
+            />
+          </Box>
         </Box>
       </Card>
     </>
